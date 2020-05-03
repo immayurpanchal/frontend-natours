@@ -11,7 +11,7 @@ const TourList = () => {
 
 	useEffect(() => {
 		dispatch(getAllTours());
-	}, [dispatch]);
+	});
 
 	return (
 		<main className='main'>
