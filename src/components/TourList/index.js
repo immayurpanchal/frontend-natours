@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import TourCard from '../TourCard';
 import { getAllTours } from '../../modules/tour/tour.action';
@@ -11,7 +12,7 @@ const TourList = () => {
 
 	useEffect(() => {
 		dispatch(getAllTours());
-	});
+	}, []);
 
 	return (
 		<main className='main'>

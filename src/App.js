@@ -1,21 +1,28 @@
 import React from 'react';
-import Header from './components/Header';
+import { Route, Router, Switch } from 'react-router-dom';
 import Footer from './components/Footer';
-import TourList from './components/TourList';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import Header from './components/Header';
+import Login from './components/Login';
+import MyAccount from './components/MyAccount';
+import Signup from './components/SignUp';
 import TourDetails from './components/TourDetails';
+import TourList from './components/TourList';
+import history from './modules/history';
 
 function App() {
 	return (
 		<>
-			<Header />
-			<BrowserRouter>
+			<Router history={history}>
+				<Header />
 				<Switch>
+					<Route path='/login' exact component={Login} />
+					<Route path='/me' exact component={MyAccount} />
+					<Route path='/signup' exact component={Signup} />
 					<Route path='/:tourSlug' exact component={TourDetails} />
 					<Route path='/' exact component={TourList} />
 				</Switch>
-			</BrowserRouter>
-			<Footer />
+				<Footer />
+			</Router>
 		</>
 	);
 }

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
+import { CookiesProvider } from 'react-cookie';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { rootReducer } from './modules';
 import thunk from 'redux-thunk';
@@ -21,7 +22,9 @@ const store = createStore(
 ReactDOM.render(
 	<Provider store={store}>
 		<React.StrictMode>
-			<App />
+			<CookiesProvider>
+				<App />
+			</CookiesProvider>
 		</React.StrictMode>
 	</Provider>,
 	document.getElementById('root')
