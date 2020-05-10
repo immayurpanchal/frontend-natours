@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TourCard = (props) => {
 	const {
@@ -15,6 +16,7 @@ const TourCard = (props) => {
 			locations,
 			startDates,
 			images,
+			id,
 		},
 	} = props;
 
@@ -78,12 +80,9 @@ const TourCard = (props) => {
 					<span className='card__footer-value'>{ratingAverage}</span>{' '}
 					<span className='card__footer-text'>rating ({ratingQuantity})</span>
 				</p>
-				<a
-					className='btn btn--green btn--small'
-					href='/tour/the-mountain-biker'
-				>
+				<Link className='btn btn--green btn--small' to={`/${id}`}>
 					Details
-				</a>
+				</Link>
 			</div>
 		</div>
 	);
