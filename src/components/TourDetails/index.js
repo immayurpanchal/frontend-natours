@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getATour } from '../../modules/tour/tour.action';
+import { bookTour } from '../../apis/stripe';
+import { Link } from 'react-router-dom';
 
 const TourDetails = (props) => {
 	const {
 		match: { params },
 	} = props;
 
-	const { tour } = useSelector((state) => ({ tour: state.tours.tour }));
+	const { tour, isLoggedIn } = useSelector((state) => ({
+		tour: state.tours.tour,
+		isLoggedIn: state.user.profile.email,
+	}));
 	const dispatch = useDispatch();
 
 	const {
@@ -201,9 +206,20 @@ const TourDetails = (props) => {
 						<p className='cta__text'>
 							7 days. 1 adventure. Infinite memories. Make it yours today!
 						</p>
-						<a className='btn btn--green span-all-rows' href='/login'>
-							Log in to book tour
-						</a>
+						{!isLoggedIn && (
+							<Link className='btn btn--green span-all-rows' to='/login'>
+								Log in to book tour
+							</Link>
+						)}
+						{isLoggedIn && (
+							<button
+								className='btn btn--green span-all-rows'
+								type='button'
+								onClick={() => bookTour(tour._id)}
+							>
+								Book Tour Now!
+							</button>
+						)}
 					</div>
 				</div>
 			</section>
