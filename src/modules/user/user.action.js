@@ -38,11 +38,7 @@ export const getCurrentUser = () => {
 		}
 
 		try {
-			const { data } = await natours.get('/users/me', {
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			});
+			const { data } = await natours.get('/users/me');
 
 			return dispatch({ type: GET_CURRENT_USER, payload: data.data.tour });
 		} catch (error) {
