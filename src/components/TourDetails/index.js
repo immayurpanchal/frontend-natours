@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getATour } from '../../modules/tour/tour.action';
-import { bookTour } from '../../apis/stripe';
 import { Link } from 'react-router-dom';
+import { createBooking } from '../../modules/booking/booking.action';
 
 const TourDetails = (props) => {
 	const {
@@ -13,6 +13,7 @@ const TourDetails = (props) => {
 		tour: state.tours.tour,
 		isLoggedIn: state.user.profile.email,
 	}));
+
 	const dispatch = useDispatch();
 
 	const {
@@ -34,6 +35,10 @@ const TourDetails = (props) => {
 			year: 'numeric',
 			month: 'long',
 		});
+
+	const onUserCheckout = () => {
+		dispatch(createBooking());
+	};
 
 	useEffect(() => {
 		dispatch(getATour(params.tourSlug));
@@ -117,8 +122,8 @@ const TourDetails = (props) => {
 						</div>
 						<div className='overview-box__group'>
 							<h2 className='heading-secondary ma-bt-lg'>Your tour guides</h2>
-							{guides.map((guide) => (
-								<div className='overview-box__detail'>
+							{guides.map((guide, index) => (
+								<div className='overview-box__detail' key={index}>
 									<img
 										className='overview-box__img'
 										src={`/img/users/${guide.photo}`}
@@ -140,8 +145,8 @@ const TourDetails = (props) => {
 			</section>
 
 			<section className='section-pictures'>
-				{images.map((image) => (
-					<div className='picture-box'>
+				{images.map((image, index) => (
+					<div className='picture-box' key={index}>
 						<img
 							className='picture-box__img picture-box__img--1'
 							src={`/img/tours/${image}`}
@@ -153,8 +158,8 @@ const TourDetails = (props) => {
 
 			<section className='section-reviews'>
 				<div className='reviews'>
-					{reviews.map((review) => (
-						<div className='reviews__card'>
+					{reviews.map((review, index) => (
+						<div className='reviews__card' key={index}>
 							<div className='reviews__avatar'>
 								<img
 									className='reviews__avatar-img'
@@ -214,8 +219,7 @@ const TourDetails = (props) => {
 						{isLoggedIn && (
 							<button
 								className='btn btn--green span-all-rows'
-								type='button'
-								onClick={() => bookTour(tour._id)}
+								onClick={onUserCheckout}
 							>
 								Book Tour Now!
 							</button>

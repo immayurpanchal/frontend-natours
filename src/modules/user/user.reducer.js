@@ -14,6 +14,7 @@ const initialState = {
 		role: '',
 		email: '',
 		photo: '',
+		id: '',
 	},
 };
 
@@ -27,6 +28,7 @@ export const userReducer = (state = initialState, action) => {
 					role: action.payload.role,
 					email: action.payload.email,
 					photo: action.payload.photo,
+					id: action.payload._id,
 				},
 			};
 
@@ -44,6 +46,7 @@ export const userReducer = (state = initialState, action) => {
 					role: action.payload.role,
 					email: action.payload.email,
 					photo: action.payload.photo,
+					id: action.payload._id,
 				},
 			};
 
@@ -55,6 +58,7 @@ export const userReducer = (state = initialState, action) => {
 					role: action.payload.role,
 					email: action.payload.email,
 					photo: action.payload.photo,
+					id: action.payload._id,
 				},
 			};
 
@@ -83,6 +87,7 @@ export const userReducer = (state = initialState, action) => {
 					name: action.payload.name,
 					email: action.payload.email,
 					photo: action.payload.photo,
+					id: action.payload.id,
 				},
 			};
 		default:
