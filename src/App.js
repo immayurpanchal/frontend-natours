@@ -9,6 +9,7 @@ import TourDetails from './components/TourDetails';
 import TourList from './components/TourList';
 import history from './modules/history';
 import Toaster from './components/Toaster';
+import MyTours from './components/MyTours';
 
 const App = () => {
 	return (
@@ -20,6 +21,7 @@ const App = () => {
 					<Route path='/login' exact component={Login} />
 					<Route path='/me' exact component={MyAccount} />
 					<Route path='/signup' exact component={Signup} />
+					<Route path='/my-tours' exact component={MyTours} />
 					<Route path='/:tourSlug' exact component={TourDetails} />
 					<Route path='/' exact component={TourList} />
 				</Switch>

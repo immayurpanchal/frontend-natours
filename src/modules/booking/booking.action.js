@@ -1,6 +1,7 @@
 import natours from '../../apis/natours';
 import { displayRazorPay, fillOrder, loadRazorPay } from '../../apis/razorpay';
 import history from '../history';
+import { GET_CURRENT_USER_BOOKINGS } from './booking.constants';
 
 export const createBooking = (tourId) => {
 	return async (dispatch, getState) => {
@@ -49,5 +50,12 @@ export const createBooking = (tourId) => {
 		} catch (err) {
 			console.log(err);
 		}
+	};
+};
+
+export const getCurrentUserBookings = () => {
+	return async (dispatch) => {
+		const res = await natours.get('/bookings/me');
+		dispatch({ type: GET_CURRENT_USER_BOOKINGS, payload: res.data.data });
 	};
 };

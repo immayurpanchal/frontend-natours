@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserSidePanel = () => {
 	return (
@@ -13,12 +14,12 @@ const UserSidePanel = () => {
 					</a>
 				</li>
 				<li>
-					<a href='/my-tours'>
+					<Link to='/my-tours'>
 						<svg>
 							<use href='img/icons.svg#icon-briefcase'></use>
 						</svg>
 						My bookings
-					</a>
+					</Link>
 				</li>
 				<li>
 					<a href='/#'>
