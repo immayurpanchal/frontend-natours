@@ -16,6 +16,7 @@ const initialState = {
 		photo: '',
 		id: '',
 	},
+	isUserAuthorised: false,
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -30,12 +31,14 @@ export const userReducer = (state = initialState, action) => {
 					photo: action.payload.photo,
 					id: action.payload._id,
 				},
+				isUserAuthorised: true,
 			};
 
 		case USER_LOGOUT:
 			return {
 				...state,
 				profile: { ...initialState.profile },
+				isUserAuthorised: false,
 			};
 
 		case USER_SIGNUP:
@@ -48,6 +51,7 @@ export const userReducer = (state = initialState, action) => {
 					photo: action.payload.photo,
 					id: action.payload._id,
 				},
+				isUserAuthorised: true,
 			};
 
 		case GET_CURRENT_USER:
@@ -60,6 +64,7 @@ export const userReducer = (state = initialState, action) => {
 					photo: action.payload.photo,
 					id: action.payload._id,
 				},
+				isUserAuthorised: true,
 			};
 
 		case USER_AUTH_FAILED:
@@ -68,6 +73,7 @@ export const userReducer = (state = initialState, action) => {
 				profile: {
 					...initialState.profile,
 				},
+				isUserAuthorised: false,
 			};
 
 		case UPDATE_CURRENT_USER:

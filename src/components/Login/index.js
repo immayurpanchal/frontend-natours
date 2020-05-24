@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../modules/user/user.action';
 import './Login.scss';
+import { toggleToaster } from '../../modules/toaster/toaster.action';
 
 const Login = () => {
 	const [email, setEmail] = useState('');
@@ -17,6 +18,9 @@ const Login = () => {
 		e.preventDefault();
 
 		dispatch(loginUser(email, password));
+		dispatch(
+			toggleToaster({ visible: true, isSuccess: true, message: 'Validating' })
+		);
 	};
 
 	if (isUserLoggedIn) {

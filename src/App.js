@@ -8,11 +8,13 @@ import Signup from './components/SignUp';
 import TourDetails from './components/TourDetails';
 import TourList from './components/TourList';
 import history from './modules/history';
+import Toaster from './components/Toaster';
 
-function App() {
+const App = () => {
 	return (
 		<>
 			<Router history={history}>
+				<Toaster />
 				<Header />
 				<Switch>
 					<Route path='/login' exact component={Login} />
@@ -25,6 +27,6 @@ function App() {
 			</Router>
 		</>
 	);
-}
+};
 
 export default App;

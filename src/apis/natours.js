@@ -6,8 +6,8 @@ const token = cookie.get('jwt');
 
 export default Axios.create({
 	baseURL:
-		'https://backend-natours.herokuapp.com/api/v1' ||
 		`${process.env.REACT_APP_API_BASE_URL}/api/v1` ||
+		'https://backend-natours.herokuapp.com/api/v1' ||
 		'http://127.0.0.1:8000/api/v1',
 	headers: {
 		Authorization: `Bearer ${token}`,

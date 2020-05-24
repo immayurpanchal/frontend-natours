@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getATour } from '../../modules/tour/tour.action';
 import { Link } from 'react-router-dom';
 import { createBooking } from '../../modules/booking/booking.action';
+import Loading from '../Loading';
 
 const TourDetails = (props) => {
 	const {
@@ -45,7 +46,13 @@ const TourDetails = (props) => {
 	}, [dispatch, params.tourSlug, tour.name]);
 
 	if (!tour.name) {
-		return <div>Loading...!</div>;
+		return (
+			<div className='main'>
+				<div className='class-container'>
+					<Loading width='100px' height='100px' />
+				</div>
+			</div>
+		);
 	}
 
 	return (

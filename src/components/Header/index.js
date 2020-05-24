@@ -1,17 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
 	getCurrentUser,
 	logoutCurrentUser,
 } from '../../modules/user/user.action';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
-	const [isLoggedIn, setLogin] = useState(false);
-
 	const dispatch = useDispatch();
-	const { user } = useSelector((state) => ({ user: state.user }));
+
+	const { isUserAuthorised: isLoggedIn, user } = useSelector((state) => ({
+		isUserAuthorised: state.user.isUserAuthorised,
+		user: state.user,
+	}));
 
 	const onLogoutClick = () => {
 		dispatch(logoutCurrentUser());
@@ -20,14 +22,6 @@ const Header = () => {
 	useEffect(() => {
 		dispatch(getCurrentUser());
 	}, []);
-
-	useEffect(() => {
-		if (user.profile.email) {
-			setLogin(true);
-		} else {
-			setLogin(false);
-		}
-	}, [user]);
 
 	return (
 		<header className='header'>

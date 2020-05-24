@@ -1,0 +1,1 @@
+export const TOGGLE_TOASTER = 'TOGGLE_TOASTER';
