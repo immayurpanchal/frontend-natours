@@ -21,22 +21,6 @@ const UserSidePanel = () => {
 						My bookings
 					</Link>
 				</li>
-				<li>
-					<a href='/#'>
-						<svg>
-							<use href='img/icons.svg#icon-star'></use>
-						</svg>
-						My reviews
-					</a>
-				</li>
-				<li>
-					<a href='/#'>
-						<svg>
-							<use href='img/icons.svg#icon-credit-card'></use>
-						</svg>
-						Billing
-					</a>
-				</li>
 			</ul>
 		</nav>
 	);
