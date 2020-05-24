@@ -174,6 +174,11 @@ export const updateCurrentUserPassword = (passwordData) => {
 				})
 			);
 
+			const cookie = new Cookies();
+			cookie.remove('jwt');
+
+			history.push('/');
+
 			dispatch({
 				type: UPDATE_CURRENT_USER_PASSWORD,
 				payload: res.data.data.user,
