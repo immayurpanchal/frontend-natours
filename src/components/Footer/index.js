@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
@@ -8,19 +9,19 @@ const Footer = () => {
 			</div>
 			<ul className='footer__nav'>
 				<li>
-					<a href='/test'>About us</a>
+					<Link to='/'>About us</Link>
 				</li>
 				<li>
-					<a href='/test'>Download apps</a>
+					<Link to='/'>Download apps</Link>
 				</li>
 				<li>
-					<a href='/test'>Become a guide</a>
+					<Link to='/'>Become a guide</Link>
 				</li>
 				<li>
-					<a href='/test'>Careers</a>
+					<Link to='/'>Careers</Link>
 				</li>
 				<li>
-					<a href='/test'>Contact</a>
+					<Link to='/'>Contact</Link>
 				</li>
 			</ul>
 			<p className='footer__copyright'>© 2020 by Jonas Schmedtmann.</p>
