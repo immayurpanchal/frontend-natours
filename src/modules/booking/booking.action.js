@@ -2,6 +2,7 @@ import natours from '../../apis/natours';
 import { displayRazorPay, fillOrder, loadRazorPay } from '../../apis/razorpay';
 import history from '../history';
 import { GET_CURRENT_USER_BOOKINGS } from './booking.constants';
+import { toggleToaster } from '../toaster/toaster.action';
 
 export const createBooking = (tourId) => {
 	return async (dispatch, getState) => {
@@ -31,6 +32,13 @@ export const createBooking = (tourId) => {
 				});
 
 				if (data.status === 'success') {
+					dispatch(
+						toggleToaster({
+							visible: true,
+							isSuccess: true,
+							message: 'Congrats! Booking succeed!',
+						})
+					);
 					history.push('/');
 				}
 			};
