@@ -4,6 +4,7 @@ import { getATour } from '../../modules/tour/tour.action';
 import { Link } from 'react-router-dom';
 import { createBooking } from '../../modules/booking/booking.action';
 import Loading from '../Loading';
+import { toggleToaster } from '../../modules/toaster/toaster.action';
 
 const TourDetails = (props) => {
 	const {
@@ -39,6 +40,13 @@ const TourDetails = (props) => {
 
 	const onUserCheckout = () => {
 		dispatch(createBooking());
+		dispatch(
+			toggleToaster({
+				visible: true,
+				isSuccess: true,
+				message: 'Processing... Please do not click again...',
+			})
+		);
 	};
 
 	useEffect(() => {
