@@ -1,0 +1,42 @@
+{
+  "header": {
+    "login": "लॉग इन करें",
+    "allTours": "सभी पर्यटन",
+    "signup": "साइन अप करें",
+    "logout": "लॉग आउट"
+  },
+  "footer": {
+    "aboutus": "हमारे बारे में",
+    "downloadApps": "एप्लिकेशन डाउनलोड करें",
+    "becomeAGuide": "एक मार्गदर्शक बनें",
+    "carrers": "करियर",
+    "contact": "संपर्क करें"
+  },
+  "login": {
+    "title": "अपने खाते में प्रवेश करें",
+    "email": "ईमेल पता",
+    "password": "कुंजिका",
+    "login": "लॉग इन करें"
+  },
+  "signup": {
+    "title": "अपने खाते बनाएँ!",
+    "name": "आपका नाम",
+    "email": "ईमेल पता",
+    "password": "कुंजिका",
+    "confirmPassword": "पासवर्ड की पुष्टि कीजिये",
+    "signup": "साइन अप करें"
+  },
+  "profile": {
+    "title": "आपकी खाता सेटिंग",
+    "name": "नाम",
+    "email": "ईमेल पता",
+    "saveSettings": "समायोजन बचाओ",
+    "passwordChange": "पासवर्ड परिवर्तन",
+    "currentPassword": "वर्तमान पासवर्ड",
+    "newPassword": "नया पासवर्ड",
+    "confirmPassword": "पासवर्ड की पुष्टि कीजिये",
+    "savePassword": "पासवर्ड को बचाओ",
+    "settings": "समायोजन",
+    "myBookings": "मेरी बुकिंग"
+  }
+}
