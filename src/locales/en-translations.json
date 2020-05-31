@@ -1,0 +1,42 @@
+{
+  "header": {
+    "login": "Log In",
+    "allTours": "All Tours",
+    "signup": "Sign up",
+    "logout": "Log out"
+  },
+  "footer": {
+    "aboutus": "About us",
+    "downloadApps": "Download apps",
+    "becomeAGuide": "Become a guide",
+    "carrers": "Careers",
+    "contact": "Contact"
+  },
+  "login": {
+    "title": "Log into your account",
+    "email": "Email Address",
+    "password": "Password",
+    "login": "Log In"
+  },
+  "signup": {
+    "title": "Create your account!",
+    "name": "Your name",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "signup": "Sign up"
+  },
+  "profile": {
+    "title": "Your account settings",
+    "name": "Name",
+    "email": "Email Address",
+    "saveSettings": "Save Settings",
+    "passwordChange": "Password change",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "savePassword": "Save Password",
+    "settings": "Settings",
+    "myBookings": "My Bookings"
+  }
+}
