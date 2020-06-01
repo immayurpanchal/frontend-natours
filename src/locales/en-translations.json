@@ -1,42 +1,59 @@
 {
-  "header": {
-    "login": "Log In",
-    "allTours": "All Tours",
-    "signup": "Sign up",
-    "logout": "Log out"
-  },
-  "footer": {
-    "aboutus": "About us",
-    "downloadApps": "Download apps",
-    "becomeAGuide": "Become a guide",
-    "carrers": "Careers",
-    "contact": "Contact"
-  },
-  "login": {
-    "title": "Log into your account",
-    "email": "Email Address",
-    "password": "Password",
-    "login": "Log In"
-  },
-  "signup": {
-    "title": "Create your account!",
-    "name": "Your name",
-    "email": "Email Address",
-    "password": "Password",
-    "confirmPassword": "Confirm password",
-    "signup": "Sign up"
-  },
-  "profile": {
-    "title": "Your account settings",
-    "name": "Name",
-    "email": "Email Address",
-    "saveSettings": "Save Settings",
-    "passwordChange": "Password change",
-    "currentPassword": "Current password",
-    "newPassword": "New password",
-    "confirmPassword": "Confirm password",
-    "savePassword": "Save Password",
-    "settings": "Settings",
-    "myBookings": "My Bookings"
-  }
+	"header": {
+		"login": "Log In",
+		"allTours": "All Tours",
+		"signup": "Sign up",
+		"logout": "Log out"
+	},
+	"footer": {
+		"aboutus": "About us",
+		"downloadApps": "Download apps",
+		"becomeAGuide": "Become a guide",
+		"carrers": "Careers",
+		"contact": "Contact"
+	},
+	"login": {
+		"title": "Log into your account",
+		"email": "Email Address",
+		"password": "Password",
+		"login": "Log In"
+	},
+	"signup": {
+		"title": "Create your account!",
+		"name": "Your name",
+		"email": "Email Address",
+		"password": "Password",
+		"confirmPassword": "Confirm password",
+		"signup": "Sign up"
+	},
+	"profile": {
+		"title": "Your account settings",
+		"name": "Name",
+		"email": "Email Address",
+		"saveSettings": "Save Settings",
+		"passwordChange": "Password change",
+		"currentPassword": "Current password",
+		"newPassword": "New password",
+		"confirmPassword": "Confirm password",
+		"savePassword": "Save Password",
+		"settings": "Settings",
+		"myBookings": "My Bookings",
+		"choosePhoto": "Choose new photo"
+	},
+	"toaster": {
+		"validating": "Validating",
+		"tourCheckout": "Processing... Please do not click again...",
+		"logoutSuccess": "Logged out successfully",
+		"loginSuccess": "Logged in Successfully",
+		"loginFailed": "Invalid Login or password",
+		"bookingSuccess": "Congrats! Booking succeed!",
+		"signupProcess": "Creating your account please wait...",
+		"signupFailed": "Failed to create your account. Try Again",
+		"profileUpdateProcess": "Your profile is being updated...",
+		"profileUpdateSuccess": "Profile updated successfully",
+		"profileUpdateFailed": "Failed to update your profile",
+		"passwordUpdateProcess": "Password is being updated...",
+		"passwordUpdateSuccess": "Password updated successfully",
+		"passwordUpdateFailed": "Failed to update your password. Check current password or new password combination"
+	}
 }
