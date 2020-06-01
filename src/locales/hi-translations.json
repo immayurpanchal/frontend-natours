@@ -1,42 +1,58 @@
 {
-  "header": {
-    "login": "लॉग इन करें",
-    "allTours": "सभी पर्यटन",
-    "signup": "साइन अप करें",
-    "logout": "लॉग आउट"
-  },
-  "footer": {
-    "aboutus": "हमारे बारे में",
-    "downloadApps": "एप्लिकेशन डाउनलोड करें",
-    "becomeAGuide": "एक मार्गदर्शक बनें",
-    "carrers": "करियर",
-    "contact": "संपर्क करें"
-  },
-  "login": {
-    "title": "अपने खाते में प्रवेश करें",
-    "email": "ईमेल पता",
-    "password": "कुंजिका",
-    "login": "लॉग इन करें"
-  },
-  "signup": {
-    "title": "अपने खाते बनाएँ!",
-    "name": "आपका नाम",
-    "email": "ईमेल पता",
-    "password": "कुंजिका",
-    "confirmPassword": "पासवर्ड की पुष्टि कीजिये",
-    "signup": "साइन अप करें"
-  },
-  "profile": {
-    "title": "आपकी खाता सेटिंग",
-    "name": "नाम",
-    "email": "ईमेल पता",
-    "saveSettings": "समायोजन बचाओ",
-    "passwordChange": "पासवर्ड परिवर्तन",
-    "currentPassword": "वर्तमान पासवर्ड",
-    "newPassword": "नया पासवर्ड",
-    "confirmPassword": "पासवर्ड की पुष्टि कीजिये",
-    "savePassword": "पासवर्ड को बचाओ",
-    "settings": "समायोजन",
-    "myBookings": "मेरी बुकिंग"
-  }
+	"header": {
+		"login": "लॉग इन करें",
+		"allTours": "सभी पर्यटन",
+		"signup": "साइन अप करें",
+		"logout": "लॉग आउट"
+	},
+	"footer": {
+		"aboutus": "हमारे बारे में",
+		"downloadApps": "एप्लिकेशन डाउनलोड करें",
+		"becomeAGuide": "एक मार्गदर्शक बनें",
+		"carrers": "करियर",
+		"contact": "संपर्क करें"
+	},
+	"login": {
+		"title": "अपने खाते में प्रवेश करें",
+		"email": "ईमेल पता",
+		"password": "कुंजिका",
+		"login": "लॉग इन करें"
+	},
+	"signup": {
+		"title": "अपने खाते बनाएँ!",
+		"name": "आपका नाम",
+		"email": "ईमेल पता",
+		"password": "कुंजिका",
+		"confirmPassword": "पासवर्ड की पुष्टि कीजिये",
+		"signup": "साइन अप करें"
+	},
+	"profile": {
+		"title": "आपकी खाता सेटिंग",
+		"name": "नाम",
+		"email": "ईमेल पता",
+		"saveSettings": "समायोजन बचाओ",
+		"passwordChange": "पासवर्ड परिवर्तन",
+		"currentPassword": "वर्तमान पासवर्ड",
+		"newPassword": "नया पासवर्ड",
+		"confirmPassword": "पासवर्ड की पुष्टि कीजिये",
+		"savePassword": "पासवर्ड को बचाओ",
+		"settings": "समायोजन",
+		"myBookings": "मेरी बुकिंग"
+	},
+	"toaster": {
+		"validating": "सत्यापित किया जा रहा",
+		"tourCheckout": "प्रसंस्करण ... कृपया फिर से क्लिक न करें ...",
+		"logout": "सफलतापूर्वक लॉग आउट किया गया",
+		"loginSuccess": "सफलतापूर्वक लॉग इन हो चुका है",
+		"loginFailed": "अवैध लॉगइन या पासवर्ड",
+		"bookingSuccess": "बधाई! बुकिंग सफल!",
+		"signupProcess": "अपना खाता बनाना कृपया प्रतीक्षा करें ...",
+		"signupFailed": "अपना खाता बनाने में विफल। पुनः प्रयास करें",
+		"profileUpdateProcess": "आपकी प्रोफ़ाइल अपडेट की जा रही है ...",
+		"profileUpdateSuccess": "प्रोफाइल को सफलतापूर्वक अपडेट किया गया",
+		"profileUpdateFailed": "अपनी प्रोफ़ाइल अपडेट करने में विफल",
+		"passwordUpdateProcess": "पासवर्ड अपडेट किया जा रहा है ...",
+		"passwordUpdateSuccess": "पासवर्ड सफलतापूर्वक अपडेट किया गया",
+		"passwordUpdateFailed": "अपना पासवर्ड अपडेट करने में विफल। वर्तमान पासवर्ड या नए पासवर्ड संयोजन की जाँच करें"
+	}
 }
