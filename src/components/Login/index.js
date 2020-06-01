@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../modules/user/user.action';
 import './Login.scss';
 import { toggleToaster } from '../../modules/toaster/toaster.action';
+import { useTranslation } from 'react-i18next';
 
 const Login = () => {
+	const { t: translation } = useTranslation();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -18,9 +20,7 @@ const Login = () => {
 		e.preventDefault();
 
 		dispatch(loginUser(email, password));
-		dispatch(
-			toggleToaster({ visible: true, isSuccess: true, message: 'Validating' })
-		);
+		dispatch(toggleToaster({ visible: true, isSuccess: true, message: translation('toaster.validating') }));
 	};
 
 	if (isUserLoggedIn) {
@@ -33,11 +33,11 @@ const Login = () => {
 	return (
 		<main className='main'>
 			<div className='login-form'>
-				<h2 className='heading-secondary ma-bt-lg'>Log into your account</h2>
+				<h2 className='heading-secondary ma-bt-lg'>{translation('login.title')}</h2>
 				<form className='form form--login' onSubmit={onFormSubmit}>
 					<div className='form__group'>
 						<label className='form__label' htmlFor='email'>
-							Email address
+							{translation('login.email')}
 						</label>
 						<input
 							className='form__input'
@@ -51,7 +51,7 @@ const Login = () => {
 					</div>
 					<div className='form__group ma-bt-md'>
 						<label className='form__label' htmlFor='password'>
-							Password
+							{translation('login.password')}
 						</label>
 						<input
 							className='form__input'
@@ -66,7 +66,7 @@ const Login = () => {
 					</div>
 					<div className='form__group'>
 						<button className='btn btn--green' type='submit'>
-							Login
+							{translation('login.login')}
 						</button>
 					</div>
 				</form>

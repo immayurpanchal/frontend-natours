@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 import { createBooking } from '../../modules/booking/booking.action';
 import Loading from '../Loading';
 import { toggleToaster } from '../../modules/toaster/toaster.action';
+import { useTranslation } from 'react-i18next';
 
 const TourDetails = (props) => {
+	const { t: translation } = useTranslation();
 	const {
 		match: { params },
 	} = props;
@@ -44,7 +46,7 @@ const TourDetails = (props) => {
 			toggleToaster({
 				visible: true,
 				isSuccess: true,
-				message: 'Processing... Please do not click again...',
+				message: translation('toaster.tourCheckout'),
 			})
 		);
 	};
@@ -68,11 +70,7 @@ const TourDetails = (props) => {
 			<section className='section-header'>
 				<div className='header__hero'>
 					<div className='header__hero-overlay'>&nbsp;</div>
-					<img
-						className='header__hero-img'
-						src='/img/tours/tour-2-cover.jpg'
-						alt={name}
-					/>
+					<img className='header__hero-img' src='/img/tours/tour-2-cover.jpg' alt={name} />
 				</div>
 				<div className='heading-box'>
 					<h1 className='heading-primary'>
@@ -89,9 +87,7 @@ const TourDetails = (props) => {
 							<svg className='heading-box__icon'>
 								<use href='/img/icons.svg#icon-map-pin'></use>
 							</svg>
-							<span className='heading-box__text'>
-								{startLocation.description}
-							</span>
+							<span className='heading-box__text'>{startLocation.description}</span>
 						</div>
 					</div>
 				</div>
@@ -107,9 +103,7 @@ const TourDetails = (props) => {
 									<use href='/img/icons.svg#icon-calendar'></use>
 								</svg>
 								<span className='overview-box__label'>Next date</span>
-								<span className='overview-box__text'>
-									{getStartTime(startDates[0])}
-								</span>
+								<span className='overview-box__text'>{getStartTime(startDates[0])}</span>
 							</div>
 							<div className='overview-box__detail'>
 								<svg className='overview-box__icon'>
@@ -123,9 +117,7 @@ const TourDetails = (props) => {
 									<use href='/img/icons.svg#icon-user'></use>
 								</svg>
 								<span className='overview-box__label'>Participants</span>
-								<span className='overview-box__text'>
-									{maxGroupSize} people
-								</span>
+								<span className='overview-box__text'>{maxGroupSize} people</span>
 							</div>
 							<div className='overview-box__detail'>
 								<svg className='overview-box__icon'>
@@ -139,14 +131,8 @@ const TourDetails = (props) => {
 							<h2 className='heading-secondary ma-bt-lg'>Your tour guides</h2>
 							{guides.map((guide, index) => (
 								<div className='overview-box__detail' key={index}>
-									<img
-										className='overview-box__img'
-										src={`/img/users/${guide.photo}`}
-										alt={guide.name}
-									/>
-									<span className='overview-box__label'>
-										{guide.role === 'guide' ? 'TOUR-GUIDE' : guide.role}
-									</span>
+									<img className='overview-box__img' src={`/img/users/${guide.photo}`} alt={guide.name} />
+									<span className='overview-box__label'>{guide.role === 'guide' ? 'TOUR-GUIDE' : guide.role}</span>
 									<span className='overview-box__text'>{guide.name}</span>
 								</div>
 							))}
@@ -176,11 +162,7 @@ const TourDetails = (props) => {
 					{reviews.map((review, index) => (
 						<div className='reviews__card' key={index}>
 							<div className='reviews__avatar'>
-								<img
-									className='reviews__avatar-img'
-									src={`/img/users/${review.user.photo}`}
-									alt={review.user.name}
-								/>
+								<img className='reviews__avatar-img' src={`/img/users/${review.user.photo}`} alt={review.user.name} />
 								<h6 className='reviews__user'>{review.user.name}</h6>
 							</div>
 							<p className='reviews__text'>{review.review}</p>
@@ -211,31 +193,18 @@ const TourDetails = (props) => {
 					<div className='cta__img cta__img--logo'>
 						<img src='/img/logo-white.png' alt='Natours logo' />
 					</div>
-					<img
-						className='cta__img cta__img--1'
-						src='/img/tours/tour-2-2.jpg'
-						alt='Tour '
-					/>
-					<img
-						className='cta__img cta__img--2'
-						src='/img/tours/tour-2-3.jpg'
-						alt='Tour'
-					/>
+					<img className='cta__img cta__img--1' src='/img/tours/tour-2-2.jpg' alt='Tour ' />
+					<img className='cta__img cta__img--2' src='/img/tours/tour-2-3.jpg' alt='Tour' />
 					<div className='cta__content'>
 						<h2 className='heading-secondary'>What are you waiting for?</h2>
-						<p className='cta__text'>
-							7 days. 1 adventure. Infinite memories. Make it yours today!
-						</p>
+						<p className='cta__text'>7 days. 1 adventure. Infinite memories. Make it yours today!</p>
 						{!isLoggedIn && (
 							<Link className='btn btn--green span-all-rows' to='/login'>
 								Log in to book tour
 							</Link>
 						)}
 						{isLoggedIn && (
-							<button
-								className='btn btn--green span-all-rows'
-								onClick={onUserCheckout}
-							>
+							<button className='btn btn--green span-all-rows' onClick={onUserCheckout}>
 								Book Tour Now!
 							</button>
 						)}

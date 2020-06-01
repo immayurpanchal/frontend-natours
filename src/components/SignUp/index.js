@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { signupUser } from '../../modules/user/user.action';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 const Signup = () => {
+	const { t: translation } = useTranslation();
 	const [name, setName] = useState('');
 	const [password, setPassword] = useState('');
 	const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -19,11 +21,11 @@ const Signup = () => {
 	return (
 		<main className='main'>
 			<div className='login-form'>
-				<h2 className='heading-secondary ma-bt-lg'>Create your account!</h2>
+				<h2 className='heading-secondary ma-bt-lg'>{translation('signup.title')}</h2>
 				<form className='form form--signup' onSubmit={onFormSubmitClick}>
 					<div className='form__group'>
 						<label className='form__label' htmlFor='name'>
-							Your name
+							{translation('signup.name')}
 						</label>
 						<input
 							className='form__input'
@@ -37,7 +39,7 @@ const Signup = () => {
 					</div>
 					<div className='form__group'>
 						<label className='form__label' htmlFor='email'>
-							Email address
+							{translation('signup.email')}
 						</label>
 						<input
 							className='form__input'
@@ -51,7 +53,7 @@ const Signup = () => {
 					</div>
 					<div className='form__group ma-bt-md'>
 						<label className='form__label' htmlFor='password'>
-							Password
+							{translation('signup.password')}
 						</label>
 						<input
 							className='form__input'
@@ -66,7 +68,7 @@ const Signup = () => {
 					</div>
 					<div className='form__group ma-bt-md'>
 						<label className='form__label' htmlFor='passwordConfirm'>
-							Confirm password
+							{translation('signup.confirmPassword')}
 						</label>
 						<input
 							className='form__input'
@@ -81,7 +83,7 @@ const Signup = () => {
 					</div>
 					<div className='form__group'>
 						<button className='btn btn--green' type='submit'>
-							Sign up
+							{translation('signup.signup')}
 						</button>
 					</div>
 				</form>

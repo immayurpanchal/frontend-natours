@@ -28,7 +28,7 @@ export const loginUser = (email, password) => {
 				dispatch({
 					type: TOGGLE_TOASTER,
 					visible: true,
-					message: 'Logged in Successfully',
+					message: 'toaster.loginSuccess',
 					isSuccess: true,
 				});
 				history.push('/');
@@ -39,7 +39,7 @@ export const loginUser = (email, password) => {
 			dispatch({
 				type: TOGGLE_TOASTER,
 				visible: true,
-				message: 'Invalid Login or password',
+				message: 'toaster.loginFailed',
 				isSuccess: false,
 			});
 			return;
@@ -76,7 +76,7 @@ export const logoutCurrentUser = () => {
 		dispatch(
 			toggleToaster({
 				visible: true,
-				message: 'Logged out successfully',
+				message: 'toaster.logoutSuccess',
 				isSuccess: true,
 			})
 		);
@@ -92,7 +92,7 @@ export const signupUser = (userData) => {
 				toggleToaster({
 					visible: true,
 					isSuccess: true,
-					message: 'Creating your account please wait...',
+					message: 'toaster.signupProcess',
 				})
 			);
 			const res = await natours.post('/users/signup', {
@@ -112,7 +112,7 @@ export const signupUser = (userData) => {
 				toggleToaster({
 					visible: true,
 					isSuccess: false,
-					message: 'Failed to create your account. Try Again',
+					message: 'toaster.signupFailed',
 				})
 			);
 		}
@@ -126,7 +126,7 @@ export const updateCurrentUserData = (userData) => {
 				toggleToaster({
 					visible: true,
 					isSuccess: true,
-					message: 'Your profile is being updated...',
+					message: 'toaster.profileUpdateProcess',
 				})
 			);
 
@@ -136,7 +136,7 @@ export const updateCurrentUserData = (userData) => {
 				toggleToaster({
 					visible: true,
 					isSuccess: true,
-					message: 'Data successfully updated',
+					message: 'toaster.profileUpdateSuccess',
 				})
 			);
 
@@ -146,7 +146,7 @@ export const updateCurrentUserData = (userData) => {
 				toggleToaster({
 					visible: true,
 					isSuccess: false,
-					message: 'Failed to update your profile',
+					message: 'toaster.profileUpdateFailed',
 				})
 			);
 		}
@@ -160,7 +160,7 @@ export const updateCurrentUserPassword = (passwordData) => {
 				toggleToaster({
 					visible: true,
 					isSuccess: true,
-					message: 'Password is being updated...',
+					message: 'toaster.passwordUpdateProcess',
 				})
 			);
 
@@ -170,7 +170,7 @@ export const updateCurrentUserPassword = (passwordData) => {
 				toggleToaster({
 					visible: true,
 					isSuccess: true,
-					message: 'Password updated successfully',
+					message: 'toaster.passwordUpdateSuccess',
 				})
 			);
 
@@ -189,8 +189,7 @@ export const updateCurrentUserPassword = (passwordData) => {
 				toggleToaster({
 					visible: true,
 					isSuccess: false,
-					message:
-						'Failed to update your password. Check current password or new password combination',
+					message: 'toaster.passwordUpdateFailed',
 				})
 			);
 		}

@@ -1,13 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import {
-	getCurrentUser,
-	logoutCurrentUser,
-} from '../../modules/user/user.action';
+import { getCurrentUser, logoutCurrentUser } from '../../modules/user/user.action';
 
 const Header = () => {
+	const { t: translation, i18n } = useTranslation();
 	const dispatch = useDispatch();
 
 	const { isUserAuthorised: isLoggedIn, user } = useSelector((state) => ({
@@ -19,6 +18,20 @@ const Header = () => {
 		dispatch(logoutCurrentUser());
 	};
 
+	const onLanguageChange = (e) => {
+		switch (e.target.value) {
+			case 'EN':
+				i18n.changeLanguage('en-US');
+				break;
+			case 'HI':
+				i18n.changeLanguage('hi');
+				break;
+			default:
+				i18n.changeLanguage('en-US');
+				break;
+		}
+	};
+
 	useEffect(() => {
 		dispatch(getCurrentUser());
 	}, []);
@@ -27,8 +40,12 @@ const Header = () => {
 		<header className='header'>
 			<nav className='nav nav--tours'>
 				<Link className='nav__el' to='/'>
-					All tours
+					{translation('header.allTours')}
 				</Link>
+				<select onChange={onLanguageChange}>
+					<option>EN</option>
+					<option>HI</option>
+				</select>
 			</nav>
 			<div className='header__logo'>
 				<img src='/img/logo-white.png' alt='Natours logo' />
@@ -36,14 +53,10 @@ const Header = () => {
 			{isLoggedIn && (
 				<nav className='nav nav--user'>
 					<button className='nav__el nav__el--logout' onClick={onLogoutClick}>
-						Log out
+						{translation('header.logout')}
 					</button>
 					<Link className='nav__el' to='/me'>
-						<img
-							className='nav__user-img'
-							src='/img/users/user-2.jpg'
-							alt='Lourdes Browning'
-						/>
+						<img className='nav__user-img' src='/img/users/user-2.jpg' alt='Lourdes Browning' />
 						<span>{user.profile.name}</span>
 					</Link>
 				</nav>
@@ -51,10 +64,10 @@ const Header = () => {
 			{!isLoggedIn && (
 				<nav className='nav nav--user'>
 					<Link className='nav__el' to='/login'>
-						Log in
+						{translation('header.login')}
 					</Link>
 					<Link className='nav__el nav__el--cta' to='/signup'>
-						Sign up
+						{translation('header.signup')}
 					</Link>
 				</nav>
 			)}

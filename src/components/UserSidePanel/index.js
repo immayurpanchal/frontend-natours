@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const UserSidePanel = () => {
+	const { t: translation } = useTranslation();
 	return (
 		<nav className='user-view__menu'>
 			<ul className='side-nav'>
@@ -10,7 +12,7 @@ const UserSidePanel = () => {
 						<svg>
 							<use href='img/icons.svg#icon-settings'></use>
 						</svg>
-						Settings
+						{translation('profile.settings')}
 					</a>
 				</li>
 				<li>
@@ -18,7 +20,7 @@ const UserSidePanel = () => {
 						<svg>
 							<use href='img/icons.svg#icon-briefcase'></use>
 						</svg>
-						My bookings
+						{translation('profile.myBookings')}
 					</Link>
 				</li>
 			</ul>

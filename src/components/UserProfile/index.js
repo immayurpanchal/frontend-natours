@@ -1,12 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	updateCurrentUserData,
-	updateCurrentUserPassword,
-} from '../../modules/user/user.action';
+import { updateCurrentUserData, updateCurrentUserPassword } from '../../modules/user/user.action';
+import { useTranslation } from 'react-i18next';
 
 const UserProfile = () => {
+	const { t: translation } = useTranslation();
 	const { user } = useSelector((state) => ({ user: state.user }));
 
 	const [name, setName] = useState(user.profile.name);
@@ -42,11 +41,11 @@ const UserProfile = () => {
 	return (
 		<div className='user-view__content'>
 			<div className='user-view__form-container'>
-				<h2 className='heading-secondary ma-bt-md'>Your account settings</h2>
+				<h2 className='heading-secondary ma-bt-md'>{translation('profile.title')}</h2>
 				<form className='form form-user-data' onSubmit={onUserDataUpdate}>
 					<div className='form__group'>
 						<label className='form__label' htmlFor='name'>
-							Name
+							{translation('profile.name')}
 						</label>
 						<input
 							className='form__input'
@@ -60,7 +59,7 @@ const UserProfile = () => {
 					</div>
 					<div className='form__group ma-bt-md'>
 						<label className='form__label' htmlFor='email'>
-							Email address
+							{translation('profile.email')}
 						</label>
 						<input
 							className='form__input'
@@ -73,34 +72,24 @@ const UserProfile = () => {
 						/>
 					</div>
 					<div className='form__group form__photo-upload'>
-						<img
-							className='form__user-photo'
-							src='/img/users/user-4.jpg'
-							alt='User'
-						/>
-						<input
-							className='form__upload'
-							type='file'
-							accept='image/*'
-							id='photo'
-							name='photo'
-						/>
-						<label htmlFor='photo'>Choose new photo</label>
+						<img className='form__user-photo' src='/img/users/user-4.jpg' alt='User' />
+						<input className='form__upload' type='file' accept='image/*' id='photo' name='photo' />
+						<label htmlFor='photo'>{translation('profile.choosePhoto')}</label>
 					</div>
 					<div className='form__group right'>
 						<button className='btn btn--small btn--green' type='submit'>
-							Save settings
+							{translation('profile.saveSettings')}
 						</button>
 					</div>
 				</form>
 			</div>
 			<div className='line'>&nbsp;</div>
 			<div className='user-view__form-container'>
-				<h2 className='heading-secondary ma-bt-md'>Password change</h2>
+				<h2 className='heading-secondary ma-bt-md'>{translation('profile.passwordChange')}</h2>
 				<form className='form form-user-password' onSubmit={onPasswordUpdate}>
 					<div className='form__group'>
 						<label className='form__label' htmlFor='password-current'>
-							Current password
+							{translation('profile.currentPassword')}
 						</label>
 						<input
 							className='form__input'
@@ -115,7 +104,7 @@ const UserProfile = () => {
 					</div>
 					<div className='form__group'>
 						<label className='form__label' htmlFor='password'>
-							New password
+							{translation('profile.newPassword')}
 						</label>
 						<input
 							className='form__input'
@@ -130,7 +119,7 @@ const UserProfile = () => {
 					</div>
 					<div className='form__group ma-bt-lg'>
 						<label className='form__label' htmlFor='password-confirm'>
-							Confirm password
+							{translation('profile.confirmPassword')}
 						</label>
 						<input
 							className='form__input'
@@ -144,11 +133,8 @@ const UserProfile = () => {
 						/>
 					</div>
 					<div className='form__group right'>
-						<button
-							className='btn btn--small btn--green btn--save-password'
-							type='submit'
-						>
-							Save password
+						<button className='btn btn--small btn--green btn--save-password' type='submit'>
+							{translation('profile.savePassword')}
 						</button>
 					</div>
 				</form>

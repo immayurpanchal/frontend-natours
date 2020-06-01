@@ -36,7 +36,7 @@ export const createBooking = (tourId) => {
 						toggleToaster({
 							visible: true,
 							isSuccess: true,
-							message: 'Congrats! Booking succeed!',
+							message: 'toaster.bookingSuccess',
 						})
 					);
 					history.push('/');

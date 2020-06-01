@@ -2,8 +2,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleToaster } from '../../modules/toaster/toaster.action';
+import { useTranslation } from 'react-i18next';
 
 const Toaster = () => {
+	const { t: translation } = useTranslation();
 	const dispatch = useDispatch();
 	const { isToasterVisible, message, isSuccess } = useSelector((state) => ({
 		isToasterVisible: state.toaster.visible,
@@ -20,11 +22,7 @@ const Toaster = () => {
 	}, [isToasterVisible]);
 
 	if (isToasterVisible) {
-		return (
-			<div class={`alert alert--${isSuccess ? 'success' : 'error'}`}>
-				{message}
-			</div>
-		);
+		return <div class={`alert alert--${isSuccess ? 'success' : 'error'}`}>{translation(message)}</div>;
 	}
 
 	return null;
