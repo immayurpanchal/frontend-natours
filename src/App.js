@@ -14,6 +14,7 @@ import TourList from './components/TourList';
 import history from './modules/history';
 import Toaster from './components/Toaster';
 import MyTours from './components/MyTours';
+import LazyLoad from 'react-lazyload';
 
 i18n
 	.use(initReactI18next) // passes i18n down to react-i18next
@@ -51,7 +52,9 @@ const App = () => {
 					<Route path='/:tourSlug' exact component={TourDetails} />
 					<Route path='/' exact component={TourList} />
 				</Switch>
-				<Footer />
+				<LazyLoad height='200' once>
+					<Footer />
+				</LazyLoad>
 			</Router>
 		</>
 	);

@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import TourCard from '../TourCard';
-import { getAllTours } from '../../modules/tour/tour.action';
 import { useDispatch, useSelector } from 'react-redux';
+import { getAllTours } from '../../modules/tour/tour.action';
 import Loading from '../Loading';
+import TourCard from '../TourCard';
 
 const TourList = () => {
 	const dispatch = useDispatch();

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 
 const TourCard = (props) => {
 	const {
@@ -31,11 +32,9 @@ const TourCard = (props) => {
 			<div className='card__header'>
 				<div className='card__picture'>
 					<div className='card__picture-overlay'>&nbsp;</div>
-					<img
-						className='card__picture-img'
-						src={`/img/tours/${images[0]}`}
-						alt='The Mountain Biker'
-					/>
+					<LazyLoad height='200' once>
+						<img className='card__picture-img' src={`/img/tours/${images[0]}`} alt='The Mountain Biker' />
+					</LazyLoad>
 				</div>
 				<h3 className='heading-tertirary'>
 					<span>{name}</span>
@@ -73,8 +72,7 @@ const TourCard = (props) => {
 			</div>{' '}
 			<div className='card__footer'>
 				<p>
-					<span className='card__footer-value'>₹ {price}</span>{' '}
-					<span className='card__footer-text'>per person</span>
+					<span className='card__footer-value'>₹ {price}</span> <span className='card__footer-text'>per person</span>
 				</p>
 				<p className='card__ratings'>
 					<span className='card__footer-value'>{ratingAverage}</span>{' '}

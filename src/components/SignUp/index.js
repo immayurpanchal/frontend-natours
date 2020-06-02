@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { signupUser } from '../../modules/user/user.action';
-import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { signupUser } from '../../modules/user/user.action';
 
 const Signup = () => {
 	const { t: translation } = useTranslation();
