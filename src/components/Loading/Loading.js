@@ -3,8 +3,8 @@ import './Loading.scss';
 
 const Loading = ({ width, height }) => {
 	const style = {
-		width,
-		height,
+		width: width || '100px',
+		height: height || '100px',
 	};
 
 	return (
