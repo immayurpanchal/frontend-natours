@@ -1,35 +1,16 @@
-import Loadable from 'react-loadable';
-import Loading from './components/Loading';
+import lodable from '@loadable/component';
 
-const Login = Loadable({
-	loader: () => import(/* webpackChunkName: "Login" */ './components/Login'),
-	loading: Loading,
-});
+const Login = lodable(() => import(/* webpackChunkName: "Login" */ './components/Login'));
 
-const TourList = Loadable({
-	loader: () => import(/* webpackChunkName: "TourList" */ './components/TourList'),
-	loading: Loading,
-});
+const TourList = lodable(() => import(/* webpackChunkName: "TourList" */ './components/TourList'));
 
-const MyAccount = Loadable({
-	loader: () => import(/* webpackChunkName: "MyAccount" */ './components/MyAccount'),
-	loading: Loading,
-});
+const MyAccount = lodable(() => import(/* webpackChunkName: "MyAccount" */ './components/MyAccount'));
 
-const SignUp = Loadable({
-	loader: () => import(/* webpackChunkName: "Signup" */ './components/SignUp'),
-	loading: Loading,
-});
+const SignUp = lodable(() => import(/* webpackChunkName: "Signup" */ './components/SignUp'));
 
-const MyTours = Loadable({
-	loader: () => import(/* webpackChunkName: "MyTours" */ './components/MyTours'),
-	loading: Loading,
-});
+const MyTours = lodable(() => import(/* webpackChunkName: "MyTours" */ './components/MyTours'));
 
-const TourDetails = Loadable({
-	loader: () => import(/* webpackChunkName: "TourDetails" */ './components/TourDetails'),
-	loading: Loading,
-});
+const TourDetails = lodable(() => import(/* webpackChunkName: "TourDetails" */ './components/TourDetails'));
 
 export const getRoutes = (prefix = '') => [
 	{ path: `${prefix}/login`, component: Login, key: 'login' },
