@@ -21,13 +21,13 @@ const Header = () => {
 	const onLanguageChange = (e) => {
 		switch (e.target.value) {
 			case 'EN':
-				i18n.changeLanguage('en-US');
+				i18n.changeLanguage('en');
 				break;
 			case 'HI':
 				i18n.changeLanguage('hi');
 				break;
 			default:
-				i18n.changeLanguage('en-US');
+				i18n.changeLanguage('en');
 				break;
 		}
 	};

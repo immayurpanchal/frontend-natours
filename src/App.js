@@ -1,62 +1,34 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 import { Route, Router, Switch } from 'react-router-dom';
-import { initReactI18next } from 'react-i18next';
-import i18n from 'i18next';
-import en from './locales/en-translations.json';
-import hi from './locales/hi-translations.json';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Login from './components/Login';
-import MyAccount from './components/MyAccount';
-import Signup from './components/SignUp';
-import TourDetails from './components/TourDetails';
-import TourList from './components/TourList';
-import history from './modules/history';
 import Toaster from './components/Toaster';
-import MyTours from './components/MyTours';
-import LazyLoad from 'react-lazyload';
+import history from './modules/history';
+import { getRoutes } from './routes';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n-browser';
+import Loading from './components/Loading';
 
-i18n
-	.use(initReactI18next) // passes i18n down to react-i18next
-	.init({
-		backend: {
-			loadPath: './locales/en-translations.json',
-		},
-		resources: {
-			en: {
-				translation: en,
-			},
-			hi: {
-				translation: hi,
-			},
-		},
-		lng: 'en',
-		fallbackLng: 'en',
-
-		interpolation: {
-			escapeValue: false,
-		},
-	});
-
-const App = () => {
+const App = (props) => {
+	const { prefix } = props;
 	return (
-		<>
-			<Router history={history}>
-				<Toaster />
-				<Header />
-				<Switch>
-					<Route path='/login' exact component={Login} />
-					<Route path='/me' exact component={MyAccount} />
-					<Route path='/signup' exact component={Signup} />
-					<Route path='/my-tours' exact component={MyTours} />
-					<Route path='/:tourSlug' exact component={TourDetails} />
-					<Route path='/' exact component={TourList} />
-				</Switch>
-				<LazyLoad height='200' once>
-					<Footer />
-				</LazyLoad>
-			</Router>
-		</>
+		<React.Suspense fallback={Loading}>
+			<I18nextProvider i18n={i18n} initialLanguage={'en'}>
+				<Router history={history}>
+					<Toaster />
+					<Header />
+					<Switch>
+						{getRoutes(prefix).map((route) => (
+							<Route key={route.key} {...route} />
+						))}
+					</Switch>
+					<LazyLoad height='200' once>
+						<Footer />
+					</LazyLoad>
+				</Router>
+			</I18nextProvider>
+		</React.Suspense>
 	);
 };
 
