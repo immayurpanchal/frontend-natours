@@ -2,15 +2,19 @@ import React from 'react';
 import './Loading.scss';
 
 const Loading = ({ width, height }) => {
+	const style = {
+		width,
+		height,
+	};
+
 	return (
 		<>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				className='loading'
-				width={`${width}` || '200px'}
-				height={`${height}` || '200px'}
 				viewBox='0 0 100 100'
 				preserveAspectRatio='xMidYMid'
+				style={style}
 			>
 				<rect fill='#e15b64' x='15' y='55' width='30' height='30' rx='3' ry='3'>
 					<animate
@@ -48,15 +52,7 @@ const Loading = ({ width, height }) => {
 						begin='-0.6666666666666666s'
 					></animate>
 				</rect>
-				<rect
-					fill='#abbd81'
-					x='35.7778'
-					y='15'
-					width='30'
-					height='30'
-					rx='3'
-					ry='3'
-				>
+				<rect fill='#abbd81' x='35.7778' y='15' width='30' height='30' rx='3' ry='3'>
 					<animate
 						attributeName='x'
 						dur='2s'
