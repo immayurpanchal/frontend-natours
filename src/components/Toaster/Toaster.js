@@ -22,7 +22,7 @@ const Toaster = () => {
 	}, [isToasterVisible]);
 
 	if (isToasterVisible) {
-		return <div class={`alert alert--${isSuccess ? 'success' : 'error'}`}>{translation(message)}</div>;
+		return <div className={`alert alert--${isSuccess ? 'success' : 'error'}`}>{translation(message)}</div>;
 	}
 
 	return null;
