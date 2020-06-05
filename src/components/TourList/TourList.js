@@ -28,8 +28,6 @@ const TourList = () => {
 		}, 3000);
 	};
 
-	console.log(tourItems);
-
 	return (
 		<main className='main'>
 			{!tourItems.length && <Loading />}

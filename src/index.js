@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux';
 import { CookiesProvider } from 'react-cookie';
-import { createStore, applyMiddleware, compose } from 'redux';
-import { rootReducer } from './modules';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
+import App from './App';
+import './index.css';
+import { rootReducer } from './modules';
+import * as serviceWorker from './serviceWorker';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
