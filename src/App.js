@@ -13,7 +13,7 @@ import { getRoutes } from './routes';
 const App = (props) => {
 	const { prefix } = props;
 	return (
-		<React.Suspense fallback={Loading}>
+		<React.Suspense fallback={<Loading />}>
 			<I18nextProvider i18n={i18n} initialLanguage={'en'}>
 				<BrowserRouter history={history}>
 					<Toaster />
